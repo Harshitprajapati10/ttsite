@@ -1,3 +1,7 @@
+import badrinathDhamImage from '../assets/travel/badrinath-dham.png';
+import charDhamYatraImage from '../assets/travel/char-dham-yatra.png';
+import kedarnathDhamImage from '../assets/travel/kedarnath-dham.png';
+
 export const siteInfo = {
   name: 'Durga Tour and Travels',
   shortName: 'Durga',
@@ -31,11 +35,31 @@ export const searchDestinations = [
   'Manali',
 ];
 
+export const startingDestinations = [
+  'Haridwar',
+  'Rishikesh',
+  'Dehradun',
+  'Delhi',
+  'Noida',
+  'Ghaziabad',
+  'Meerut',
+];
+
+export const endingDestinations = [
+  'Kedarnath',
+  'Badrinath',
+  'Gangotri',
+  'Yamunotri',
+  'Char Dham Circuit',
+  'Do Dham Circuit',
+  'Rishikesh',
+  'Haridwar',
+];
+
 export const featuredRegions = [
   {
     title: 'Char Dham Yatra',
-    image:
-      'https://images.unsplash.com/photo-1623167563411-06296382147f?auto=format&fit=crop&w=900&q=80',
+    image: charDhamYatraImage,
   },
   {
     title: 'Jammu & Kashmir',
@@ -63,16 +87,14 @@ export const packages = [
     title: 'Kedarnath Dham Yatra from Haridwar',
     duration: '3 D / 2 N',
     places: 'Haridwar, Guptkashi, Kedarnath',
-    image:
-      'https://images.unsplash.com/photo-1626187061096-c856b32b6249?auto=format&fit=crop&w=900&q=80',
+    image: kedarnathDhamImage,
     guests: '10K guests travelled',
   },
   {
     title: 'Badrinath Dham Yatra from Haridwar',
     duration: '3 D / 2 N',
     places: 'Haridwar, Joshimath, Badrinath',
-    image:
-      'https://images.unsplash.com/photo-1622553311983-8d1e9963fc72?auto=format&fit=crop&w=900&q=80',
+    image: badrinathDhamImage,
     guests: '9K guests travelled',
   },
   {

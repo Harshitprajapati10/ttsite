@@ -1,5 +1,5 @@
 import { Car, Search } from 'lucide-react';
-import { searchDestinations } from '../data/siteData';
+import { endingDestinations, searchDestinations, startingDestinations } from '../data/siteData';
 
 export default function BookingPanel() {
   return (
@@ -20,8 +20,26 @@ export default function BookingPanel() {
           </select>
         </label>
         <label>
-          From - To
-          <input type="text" placeholder="Haridwar to Kedarnath" />
+          From
+          <select defaultValue="">
+            <option value="" disabled>
+              Starting destination
+            </option>
+            {startingDestinations.map((destination) => (
+              <option key={destination}>{destination}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          To
+          <select defaultValue="">
+            <option value="" disabled>
+              Ending destination
+            </option>
+            {endingDestinations.map((destination) => (
+              <option key={destination}>{destination}</option>
+            ))}
+          </select>
         </label>
         <label>
           Guests
