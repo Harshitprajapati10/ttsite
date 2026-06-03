@@ -1,83 +1,86 @@
 import { Car, Search } from 'lucide-react';
 import { endingDestinations, searchDestinations, startingDestinations } from '../data/siteData';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function BookingPanel() {
+  const { t } = useLanguage();
+
   return (
     <section className="booking-panel" aria-label="Booking search">
       <div className="tabs" role="tablist" aria-label="Booking type">
-        <button className="active">Packages</button>
-        <button>Hotels</button>
-        <button>Book Taxi</button>
+        <button className="active">{t('Packages')}</button>
+        <button>{t('Hotels')}</button>
+        <button>{t('Book Taxi')}</button>
       </div>
       <form className="package-search">
         <label>
-          Destination
+          {t('Destination')}
           <select>
-            <option>Select destination</option>
+            <option>{t('Select destination')}</option>
             {searchDestinations.map((destination) => (
-              <option key={destination}>{destination}</option>
+              <option key={destination}>{t(destination)}</option>
             ))}
           </select>
         </label>
         <label>
-          From
+          {t('From')}
           <select defaultValue="">
             <option value="" disabled>
-              Starting destination
+              {t('Starting destination')}
             </option>
             {startingDestinations.map((destination) => (
-              <option key={destination}>{destination}</option>
+              <option key={destination}>{t(destination)}</option>
             ))}
           </select>
         </label>
         <label>
-          To
+          {t('To')}
           <select defaultValue="">
             <option value="" disabled>
-              Ending destination
+              {t('Ending destination')}
             </option>
             {endingDestinations.map((destination) => (
-              <option key={destination}>{destination}</option>
+              <option key={destination}>{t(destination)}</option>
             ))}
           </select>
         </label>
         <label>
-          Guests
+          {t('Guests')}
           <input type="number" min="1" placeholder="2" />
         </label>
         <button type="button">
           <Search size={18} />
-          Search
+          {t('Search')}
         </button>
       </form>
       <form className="taxi-search">
         <label>
-          From City
-          <input type="text" placeholder="Pickup city" />
+          {t('From City')}
+          <input type="text" placeholder={t('Pickup city')} />
         </label>
         <label>
-          Drop City
-          <input type="text" placeholder="Drop city" />
+          {t('Drop City')}
+          <input type="text" placeholder={t('Drop city')} />
         </label>
         <label>
-          Pickup Date & Time
+          {t('Pickup Date & Time')}
           <input type="datetime-local" />
         </label>
         <label>
-          Guest Name
-          <input type="text" placeholder="Full name" />
+          {t('Guest Name')}
+          <input type="text" placeholder={t('Full name')} />
         </label>
         <label>
-          Phone Number
-          <input type="tel" placeholder="Mobile number" />
+          {t('Phone Number')}
+          <input type="tel" placeholder={t('Mobile number')} />
         </label>
         <label>
-          Persons
+          {t('Persons')}
           <input type="number" min="1" placeholder="4" />
         </label>
         <button type="button">
           <Car size={18} />
-          Enquire
+          {t('Enquire')}
         </button>
       </form>
     </section>
