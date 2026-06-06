@@ -21,6 +21,7 @@ function getNavItemHref(item) {
 
 export default function Header() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isHindi, t, toggleLanguage } = useLanguage();
   const isDark = theme === 'dark';
 
@@ -31,6 +32,10 @@ export default function Header() {
 
   const toggleTheme = () => {
     setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'));
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen((current) => !current);
   };
 
   return (
@@ -83,10 +88,33 @@ export default function Header() {
           <a href="/#packages">{t('Packages')}</a>
           <a href="/#contact">{t('Contact')}</a>
         </div>
-        <button className="icon-button" aria-label={t('Open menu')}>
+        <button
+          className="icon-button"
+          type="button"
+          aria-label={t(isMenuOpen ? 'Close menu' : 'Open menu')}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={toggleMenu}
+        >
           <Menu size={22} />
         </button>
       </nav>
+      <div className={`mobile-menu${isMenuOpen ? ' open' : ''}`} id="mobile-menu">
+        <a href="/">{t('Home')}</a>
+        <a href="/#packages">{t('Packages')}</a>
+        <a href="/#booking">{t('Book Taxi')}</a>
+        <a href="/#contact">{t('Contact')}</a>
+        {navGroups.map((group) => (
+          <div className="mobile-menu-group" key={group.label}>
+            <strong>{t(group.label)}</strong>
+            {group.items.map((item) => (
+              <a href={getNavItemHref(item)} key={item}>
+                {t(item)}
+              </a>
+            ))}
+          </div>
+        ))}
+      </div>
     </header>
   );
 }

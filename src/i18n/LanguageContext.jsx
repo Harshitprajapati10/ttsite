@@ -30,6 +30,7 @@ const translations = {
   'English': 'English',
   'Switch language': 'भाषा बदलें',
   'Open menu': 'मेन्यू खोलें',
+  'Close menu': 'मेन्यू बंद करें',
   'Packages': 'पैकेज',
   'Book Taxi': 'टैक्सी बुक करें',
   'Destination': 'गंतव्य',
