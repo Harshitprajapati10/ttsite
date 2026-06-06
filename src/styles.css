@@ -1032,7 +1032,7 @@ select {
   }
 
   .mobile-menu a,
-  .mobile-menu-group strong {
+  .mobile-menu-group summary {
     min-height: 42px;
     border-radius: 6px;
     padding: 10px 12px;
@@ -1060,17 +1060,39 @@ select {
 
   .mobile-menu-group {
     display: grid;
-    gap: 2px;
     padding-top: 8px;
     border-top: 1px solid var(--border);
   }
 
-  .mobile-menu-group strong {
+  .mobile-menu-group summary {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: var(--accent);
-    font-size: 0.78rem;
-    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 900;
+  }
+
+  .mobile-menu-group summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu-group summary::marker {
+    content: "";
+  }
+
+  .mobile-menu-group summary svg {
+    transition: transform 160ms ease;
+  }
+
+  .mobile-menu-group[open] summary svg {
+    transform: rotate(180deg);
+  }
+
+  .mobile-menu-group div {
+    display: grid;
+    gap: 2px;
+    padding-top: 4px;
   }
 
   .hero {

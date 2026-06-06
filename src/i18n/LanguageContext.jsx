@@ -61,7 +61,6 @@ const translations = {
   'Char Dham Yatra': 'चार धाम यात्रा',
   'Jammu & Kashmir': 'जम्मू और कश्मीर',
   'Himachal Escapes': 'हिमाचल यात्रा',
-  'Jaipur': 'जयपुर',
   'Chakrata': 'चकराता',
   'Chopta': 'चोपता',
   'Srinagar': 'श्रीनगर',

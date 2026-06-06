@@ -77,7 +77,6 @@ export const featuredRegions = [
 ];
 
 export const quickDestinations = [
-  { name: 'Jaipur', slug: 'jaipur', days: '6 Days', packages: '13+ Packages' },
   { name: 'Chakrata', slug: 'chakrata', days: '3 Days', packages: '1+ Package' },
   { name: 'Kashmir', slug: 'kashmir', days: '9 Days', packages: '12+ Packages' },
   { name: 'Chopta', slug: 'chopta', days: '6 Days', packages: '3+ Packages' },
@@ -231,13 +230,6 @@ export const detailPages = [
     { duration: '5 D / 4 N', places: 'Shimla, Manali, Kullu' },
   ),
   createDetail(
-    'jaipur',
-    'Jaipur',
-    'Sample Jaipur detail page for forts, palaces, markets and heritage sightseeing with private cab support.',
-    'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80',
-    { duration: '3 D / 2 N', places: 'Jaipur, Amer Fort, City Palace' },
-  ),
-  createDetail(
     'chakrata',
     'Chakrata',
     'Sample Chakrata escape with forest roads, quiet viewpoints, Tiger Falls and a relaxed short-break itinerary from Dehradun or Haridwar.',
@@ -280,7 +272,7 @@ export const detailPages = [
     { duration: '1 D / 0 N', places: 'Kedarnath, Badrinath' },
   ),
   ...quickDestinations
-    .filter((destination) => !['jaipur', 'chakrata', 'kashmir', 'haridwar'].includes(destination.slug))
+    .filter((destination) => !['chakrata', 'kashmir', 'haridwar'].includes(destination.slug))
     .map((destination) =>
       createDetail(
         destination.slug,

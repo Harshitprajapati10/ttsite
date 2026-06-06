@@ -102,17 +102,21 @@ export default function Header() {
       <div className={`mobile-menu${isMenuOpen ? ' open' : ''}`} id="mobile-menu">
         <a href="/">{t('Home')}</a>
         <a href="/#packages">{t('Packages')}</a>
-        <a href="/#booking">{t('Book Taxi')}</a>
         <a href="/#contact">{t('Contact')}</a>
         {navGroups.map((group) => (
-          <div className="mobile-menu-group" key={group.label}>
-            <strong>{t(group.label)}</strong>
-            {group.items.map((item) => (
-              <a href={getNavItemHref(item)} key={item}>
-                {t(item)}
-              </a>
-            ))}
-          </div>
+          <details className="mobile-menu-group" key={group.label}>
+            <summary>
+              {t(group.label)}
+              <ChevronDown size={16} />
+            </summary>
+            <div>
+              {group.items.map((item) => (
+                <a href={getNavItemHref(item)} key={item}>
+                  {t(item)}
+                </a>
+              ))}
+            </div>
+          </details>
         ))}
       </div>
     </header>
