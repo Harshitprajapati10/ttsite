@@ -6,7 +6,7 @@ export default function Brand({ footer = false }) {
   const { t } = useLanguage();
 
   return (
-    <a className={`brand${footer ? ' footer-brand' : ''}`} href="#">
+    <a className={`brand${footer ? ' footer-brand' : ''}`} href="/">
       <span className="logo-mark" aria-hidden="true">
         <img src={logoImage} alt="" />
       </span>

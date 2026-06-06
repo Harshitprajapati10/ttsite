@@ -1,8 +1,23 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown, Menu, Moon, Phone, Sun } from 'lucide-react';
 import Brand from './Brand';
-import { navGroups, siteInfo } from '../data/siteData';
+import { detailPageMap, navGroups, siteInfo } from '../data/siteData';
 import { useLanguage } from '../i18n/LanguageContext';
+
+const navItemSlugs = {
+  Haridwar: 'haridwar',
+  Himachal: 'himachal-escapes',
+  Kashmir: 'kashmir',
+  'Char Dham': 'char-dham-yatra',
+  Kedarnath: 'kedarnath-dham-yatra-from-haridwar',
+  Badrinath: 'badrinath-dham-yatra-from-haridwar',
+  'Helicopter Tour': 'do-dham-charter-helicopter-day-tour',
+};
+
+function getNavItemHref(item) {
+  const slug = navItemSlugs[item];
+  return slug && detailPageMap[slug] ? `/${slug}` : '#';
+}
 
 export default function Header() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
@@ -49,7 +64,7 @@ export default function Header() {
       <nav className="navbar" aria-label="Main navigation">
         <Brand />
         <div className="nav-links">
-          <a href="#">{t('Home')}</a>
+          <a href="/">{t('Home')}</a>
           {navGroups.map((group) => (
             <div className="nav-dropdown" key={group.label}>
               <button>
@@ -58,15 +73,15 @@ export default function Header() {
               </button>
               <div className="dropdown-menu">
                 {group.items.map((item) => (
-                  <a href="#" key={item}>
+                  <a href={getNavItemHref(item)} key={item}>
                     {t(item)}
                   </a>
                 ))}
               </div>
             </div>
           ))}
-          <a href="#packages">{t('Packages')}</a>
-          <a href="#contact">{t('Contact')}</a>
+          <a href="/#packages">{t('Packages')}</a>
+          <a href="/#contact">{t('Contact')}</a>
         </div>
         <button className="icon-button" aria-label={t('Open menu')}>
           <Menu size={22} />

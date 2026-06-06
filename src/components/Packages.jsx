@@ -18,7 +18,7 @@ function PackageCard({ item }) {
     <article className="package-card">
       <img src={item.image} alt="" />
       <div className="package-body">
-        <a href="#" className="package-title">
+        <a href={`/${item.slug}`} className="package-title">
           {t(item.title)}
         </a>
         <div className="package-meta">
@@ -56,7 +56,9 @@ function PackageCard({ item }) {
         <small>{t('Excludes train, flight fare and personal expenses.')}</small>
         <div className="card-actions">
           <a href={siteInfo.phoneHref}>{t('Call Us')}</a>
-          <button type="button">{t('View Detail')}</button>
+          <a className="detail-action" href={`/${item.slug}`}>
+            {t('View Detail')}
+          </a>
         </div>
         <p className="guest-count">
           <Users size={15} />

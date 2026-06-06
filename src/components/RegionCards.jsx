@@ -8,7 +8,7 @@ export default function RegionCards() {
     <section className="section">
       <div className="region-grid">
         {featuredRegions.map((region) => (
-          <a className="region-card" href="#" key={region.title}>
+          <a className="region-card" href={`/${region.slug}`} key={region.title}>
             <img src={region.image} alt="" />
             <span>{t(region.title)}</span>
           </a>

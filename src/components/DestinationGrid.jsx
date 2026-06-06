@@ -22,7 +22,7 @@ export default function DestinationGrid() {
       </div>
       <div className="destination-grid">
         {destinations.map((destination) => (
-          <a className="destination-tile" href="#" key={destination.name}>
+          <a className="destination-tile" href={`/${destination.slug}`} key={destination.name}>
             <span>{t(destination.name)}</span>
             <small>{t(destination.packages)}</small>
             <em>{t(destination.popularity)}</em>

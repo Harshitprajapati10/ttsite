@@ -13,9 +13,9 @@ export default function Footer() {
       </div>
       <div>
         <h3>{t('Quick Links')}</h3>
-        <a href="#packages">{t('Packages')}</a>
-        <a href="#booking">{t('Book Taxi')}</a>
-        <a href="#">{t('Hotels')}</a>
+        <a href="/#packages">{t('Packages')}</a>
+        <a href="/#booking">{t('Book Taxi')}</a>
+        <a href="/">{t('Hotels')}</a>
       </div>
       <div>
         <h3>{t('Contact')}</h3>
